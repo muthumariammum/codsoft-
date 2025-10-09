@@ -1,0 +1,55 @@
+import java.util.Scanner;
+class student{
+public static void main(String[]args)
+{
+    Scanner sc = new Scanner(System.in);
+    int subjects;
+    double total = 0,average;
+    char grade;
+
+    System.out.print("Enter number of subjects:");
+    subjects = sc.nextInt();
+    double[] marks = new double[subjects];
+
+    for(int i=0;i<subjects;i++){
+        System.out.print("Enter marks for subject"+(i+1)+":");
+        marks[i] = sc.nextDouble();
+        total += marks[i];
+
+    }
+    average = total/subjects;
+    if(average>=90)
+    grade = 'A';
+    else if(average>=80)
+    grade ='B';
+    else if(average >=70)
+    grade ='C';
+    else if(average>=60)
+    grade ='D';
+    else
+       grade ='F';
+
+    System.out.println("\n-----Result-----");
+    System.out.println("Total Marks = "+total);
+    System.out.println("Average="+average + "%");
+    System.out.println("Grade=" + grade);
+
+    sc.close();
+}   
+
+OUTPUT:
+Enter number of subjects:5
+Enter marks for subject1:98
+Enter marks for subject2:89
+Enter marks for subject3:67
+Enter marks for subject4:75
+Enter marks for subject5:35
+
+-----Result-----
+Total Marks = 364.0
+Average=72.8%
+Grade=C
+
+
+
+}
