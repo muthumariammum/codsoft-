@@ -1,0 +1,74 @@
+import java.util.Scanner;
+public class CurrencyConverter{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("----Currency Converter----");
+        System.out.println("Available Currencies:");
+        System.out.println("1.USD(US Dollar)");
+        System.out.println("2.INR(Indian Rupee)");
+        System.out.println("3.EUR(Euro)");
+        System.out.println("4.JPY(Japanese Yen)");
+        System.out.println("---------------------------");
+
+        System.out.println("Enter base currency (USD/INR/EUR/JPY):");
+        String base = sc.next().toUpperCase();
+        System.out.println("Enter target currency (USD/INR/EUR/JPY)");
+        String target = sc.next().toUpperCase();
+        System.out.print("Enter amount to convert:");
+        double amount = sc.nextDouble();
+
+        double rate = 0.0;
+        if(base.equals("USD") && target.equals("INR")){
+            rate = 83.12;
+        }else if (base.equals("INR") && target.equals("USD")) {
+            rate = 0.012;
+        } else if (base.equals("USD") && target.equals("EUR")) {
+            rate = 0.91;
+        } else if (base.equals("EUR") && target.equals("USD")) {
+            rate = 1.10;
+        } else if (base.equals("USD") && target.equals("JPY")) {
+            rate = 151.25;
+        } else if (base.equals("JPY") && target.equals("USD")) {
+            rate = 0.0066;
+        } else if (base.equals(target)) {
+            rate = 1.0;
+        } else {
+            System.out.println("Exchange rate not available for given currencies");
+            return;
+    
+        }
+        double convertedAmount = amount * rate;
+
+        System.out.println("------------------------------");
+        System.out.printf("%.2f %s = %.2f %s\n", amount, base, convertedAmount, target);
+        System.out.println("------------------------------");
+
+        System.out.println("Conversion successful");
+        System.out.println("Thank you for using the Currency Converter!");
+        sc.close();
+
+
+
+    }
+}
+
+OUTPUT:
+----Currency Converter----
+Available Currencies:
+1.USD(US Dollar)
+2.INR(Indian Rupee)
+3.EUR(Euro)
+4.JPY(Japanese Yen)
+---------------------------
+---------------------------
+Enter base currency (USD/INR/EUR/JPY):
+USD
+Enter target currency (USD/INR/EUR/JPY)
+INR
+Enter amount to convert:10
+------------------------------
+10.00 USD = 831.20 INR
+------------------------------
+Conversion successful
+Thank you for using the Currency Converter!
