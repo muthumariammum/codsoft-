@@ -1,0 +1,86 @@
+
+        int roll = sc.nextInt(); sc.nextLine();
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter Grade: ");
+        String grade = sc.nextLine();
+
+        if (name.isEmpty() || grade.isEmpty()) {
+            System.out.println("⚠ Please enter valid details!");
+            return;
+        }
+
+        list.add(new Student(roll, name, grade));
+        System.out.println(" Student Added Successfully!");
+    }
+
+    public static void viewAll() {
+        if (list.isEmpty()) System.out.println("No Students Found!");
+        else for (Student s : list) System.out.println(s);
+    }
+
+    public static void main(String[] args) {
+        int ch;
+        do {
+            System.out.println("\n=== STUDENT GRADE SYSTEM ===");
+            System.out.println("1. Add Student");
+            System.out.println("2. View All");
+            System.out.println("3. Exit");
+            System.out.print("Enter choice: ");
+            ch = sc.nextInt();
+
+            switch(ch) {
+                case 1: addStudent(); break;
+                case 2: viewAll(); break;
+                case 3: System.out.println("Thank you! Exiting..."); break;
+                default: System.out.println("Invalid Choice!");
+            }
+        } while(ch!=3);
+    }
+
+OUTPUT:
+=== STUDENT GRADE SYSTEM ===
+1. Add Student
+2. View All
+3. Exit
+Enter choice: 1
+Enter Roll No: 236314
+Enter Name: MuthumariammuM
+Enter Grade: A
+ Student Added Successfully!
+
+=== STUDENT GRADE SYSTEM ===
+1. Add Student
+2. View All
+3. Exit
+Enter choice: 1
+Enter Roll No: 236004
+Enter Name: Priya
+Enter Grade: O
+ Student Added Successfully!
+
+=== STUDENT GRADE SYSTEM ===
+1. Add Student
+2. View All
+3. Exit
+Enter choice: 1
+Enter Roll No: 236111
+Enter Name: Arun
+Enter Grade: B
+ Student Added Successfully!
+
+=== STUDENT GRADE SYSTEM ===
+1. Add Student
+2. View All
+3. Exit
+Enter choice: 2
+236314 - MuthumariammuM (A)
+236004 - Priya (O)
+236111 - Arun (B)
+
+=== STUDENT GRADE SYSTEM ===
+1. Add Student
+2. View All
+3. Exit
+Enter choice: 3
+Thank you! Exiting...
